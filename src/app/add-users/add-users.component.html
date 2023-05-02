@@ -1,0 +1,26 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un Utilisateur :</h2>
+    </div>
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID utilisateur</label>
+            <input type="number" [(ngModel)]="newUser.idUser" name="idUser" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom de L'utilisateur</label>
+            <input type="text" [(ngModel)]="newUser.nomUser" name="nomUser" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Role</label>
+            <select class="form-control form-control-lg" id="idrole" name="idrole" [(ngModel)]="newidrole">
+                <option *ngFor="let role of role" [value]="role.idrole">
+                    {{role.nomrole}}
+                </option>
+            </select>
+            </div>
+        <div class="mt-2">
+            <button type="submit" (click)="addUser()" class="btn btn-success">Ajouter</button>
+        </div>
+    </form>
+</div>

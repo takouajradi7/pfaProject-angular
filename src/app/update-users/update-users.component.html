@@ -1,0 +1,26 @@
+<div class="container">
+    <div>
+        <h2>Modifier un Utilisateur :</h2>
+    </div>
+    <form>
+        <div hidden class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Utilisateur</label>
+            <input type="number" [(ngModel)]="currentUser.idUser" name="idUser" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom De l'utilisateur</label>
+            <input type="text" [(ngModel)]="currentUser.nomUser" name="nomUser" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Role</label>
+            <select class="form-control form-control-lg" id="idrole" name="idrole" [(ngModel)]="updatedroleid">
+                <option *ngFor="let role of role" [value]="role.idrole">
+                    {{role.nomrole}}
+                </option>
+            </select>
+            </div>
+        <div class="mt-2">
+            <button type="submit" (click)="updateUser()" class="btn btn-success">Modifer</button>
+        </div>
+    </form>
+</div>
