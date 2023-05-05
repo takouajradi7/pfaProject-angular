@@ -11,8 +11,8 @@ export class UserService {
   constructor() { 
     this.users = [ ];
     this.role = [
-      {idrole : 1, nomrole : "PC"},
-      {idrole : 2, nomrole : "Imprimante"}
+      {idrole : 1, nomrole : "admin"},
+      {idrole : 2, nomrole : "user"}
     ];
   
 }

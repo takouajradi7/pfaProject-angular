@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { AddUsersComponent } from './add-users/add-users.component';
 import { UpdateUsersComponent } from './update-users/update-users.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -11,9 +12,7 @@ const routes: Routes = [
   {path: "add-users", component : AddUsersComponent},
   {path: "", redirectTo: "app", pathMatch: "full" },
   {path: "updateUser/:id", component: UpdateUsersComponent},
-  
-
-
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
