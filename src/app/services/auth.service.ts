@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { login } from '../model/login.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  log_user: login[] = [{"username":"admin","password":"123","roles":['ADMIN']},
-                    {"username":"pfa","password":"123","roles":['USER']} ];
+  constructor(private router: Router) { }
+
+  log_user: login[] = [{"username":"admin","password":"123","roles":['admin']},
+                    {"username":"pfa","password":"123","roles":['user']} ];
                     
 public loggedUser!:string;
 
@@ -30,8 +33,38 @@ SignIn(login :login):Boolean{
   }
   });
   return validUser;
-  }
+}
 
 
-  constructor() { }
+  
+
+isAdmin():Boolean{
+  if (!this.roles) //this.roles== undefiened on n'a pas de role
+      return false;
+  return (this.roles.indexOf('admin') >-1);  // si la chaine admin appartient au tableau role 
+}
+
+logout() {
+  this.isloggedIn= false;
+  this.loggedUser = undefined!;
+  this.roles = undefined!;
+  localStorage.removeItem('loggedUser');
+  localStorage.setItem('isloggedIn',String(this.isloggedIn));
+    this.router.navigate(['/login']);
+}
+
+setLoggedUserFromLocalStorage(login: string) {
+  this.loggedUser = login;
+  this.isloggedIn = true;
+  this.getUserRoles(login);
+}
+
+getUserRoles(username: string) {
+  this.log_user.forEach((curUser) => {
+    if (curUser.username == username) {
+      this.roles = curUser.roles;
+    }
+  });
+}
+
 }

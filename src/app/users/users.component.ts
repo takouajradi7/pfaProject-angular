@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {User} from '../model/users.model';
 import { UserService } from '../services/user.service';
 import { role } from '../model/role.model';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -11,12 +12,13 @@ import { role } from '../model/role.model';
 })
 export class UsersComponent implements OnInit {
 
-  User? : User[];
-  constructor(private UserService: UserService ) {  
+  Users? : User[];    //un tableau de produits
+  constructor(private UserService: UserService,
+              public authService: AuthService) {  
   }
 
   ngOnInit(): void {
-    this.User=this.UserService.listeUsers();
+    this.Users=this.UserService.listeUsers();
   }
   deleteUser(p:User)
     {

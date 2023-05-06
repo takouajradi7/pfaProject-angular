@@ -9,13 +9,13 @@
                         <th>Role</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let User of User">
+                <tbody *ngFor="let User of Users">
                     <tr>
                         <td>{{User.idUser}}</td>
                         <td>{{User.nomUser}}</td>
                         <td>{{User.roleUser.nomrole}}</td>
-                        <td><a class="btn btn-danger" (click)="deleteUser(User)">Supprimer</a></td>
-                        <td><a class="btn btn-success" [routerLink]="['/updateUser',User.idUser ]">Modifier</a></td>
+                        <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="deleteUser(User)">Supprimer</a></td>
+                        <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updateUser',User.idUser ]">Modifier</a></td>
                     
                     </tr>
                 </tbody>

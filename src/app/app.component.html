@@ -21,19 +21,25 @@
           users
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" routerLink="add-users">Ajouter</a>
+          <!-- lien afficher seulement si le user a le role admin c-a-d si la methode isAdmin renvoie true-->
+          <a  *ngIf="authService.isAdmin()" class="dropdown-item" routerLink="add-users">Ajouter</a>
           <a class="dropdown-item" href="#">Lister</a>
         </div>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
+      <!--  -->
+      <li> <a class="nav-link">{{authService.loggedUser}}</a></li>
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-          [username]
+          connexion
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">login</a>
-          <a class="dropdown-item" href="#">logout</a>
+          <!-- si on n'est pas connecter login s'affiche-->
+          <a *ngIf="!authService.isloggedIn" class="dropdown-item" routerLink = "login">login</a>
+          <!-- si on est connecter login s'affiche-->
+          <a *ngIf="authService.isloggedIn" class="dropdown-item" (click)="onLogout()">logout</a>
           <a class="dropdown-item" href="#">Profile</a>
         </div>
       </li>

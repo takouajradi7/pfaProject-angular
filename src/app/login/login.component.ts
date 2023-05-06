@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
 
   login = new login();
 
+  erreur=0;
+
   constructor(private authService : AuthService,
     private router: Router) { }
 
@@ -22,12 +24,14 @@ export class LoginComponent implements OnInit {
   onLoggedin()
   {
     console.log(this.login);
-    // let pour declarer des variables loclaes dans la methode
+    // let pour declarer des variables locales dans la methode
     let isValidUser: Boolean = this.authService.SignIn(this.login); // contient le resultat de la methode SignIn 'de la classe AuthService'
     if (isValidUser)
-      this.router.navigate(['/']);
+      this.router.navigate(['/']); 
     else
-      alert('Login ou mot de passe incorrecte!');
+     // alert('Login ou mot de passe incorrecte!');
+     this.erreur =1;
+
 }
 
   
