@@ -1,26 +1,46 @@
-<div class="container">
-    <div>
-        <h2>Ajouter un Utilisateur :</h2>
-    </div>
-    <form>
-        <div class="col-sm-2 col-md-2 col-lg-2">
-            <label>ID utilisateur</label>
-            <input type="number" [(ngModel)]="newUser.idUser" name="idUser" class="form-control">
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <label>Nom de L'utilisateur</label>
-            <input type="text" [(ngModel)]="newUser.nomUser" name="nomUser" class="form-control">
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <label>Role</label>
-            <select class="form-control form-control-lg" id="idrole" name="idrole" [(ngModel)]="newidrole">
-                <option *ngFor="let role of role" [value]="role.idrole">
-                    {{role.nomrole}}
-                </option>
-            </select>
+
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Ajouter utilistaeur</h2>
+
+                            <form>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="idUser">ID utilisateur</label>
+                                    <input type="number" [(ngModel)]="newUser.idUser" name="idUser"
+                                        class="form-control form-control-lg" />
+
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="nomUser">Nom de L'utilisateur</label>
+                                    <input type="text" [(ngModel)]="newUser.nomUser" name="nomUser"
+                                        class="form-control form-control-lg">
+
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example3cg">Role</label>
+                                    <select class="form-control form-control-lg" id="idrole" name="idrole"
+                                        [(ngModel)]="newidrole">
+                                        <option *ngFor="let role of role" [value]="role.idrole">
+                                            {{role.nomrole}}
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" (click)="addUser()"
+                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Ajouter</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-        <div class="mt-2">
-            <button type="submit" (click)="addUser()" class="btn btn-success">Ajouter</button>
         </div>
-    </form>
-</div>
+    </div>

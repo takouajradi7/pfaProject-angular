@@ -8,6 +8,11 @@ import { AddUsersComponent } from './add-users/add-users.component';
 import { UpdateUsersComponent } from './update-users/update-users.component';
 import { LoginComponent } from './login/login.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { AddJoueurComponent } from './add-joueur/add-joueur.component';
+import { JoueurComponent } from './joueur/joueur.component';
+import { EquipeComponent } from './equipe/equipe.component';
+import { AddEquipeComponent } from './add-equipe/add-equipe.component';
+import { UpdateJoueurComponent } from './update-joueur/update-joueur.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,12 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     AddUsersComponent,
     UpdateUsersComponent,
     LoginComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    AddJoueurComponent,
+    JoueurComponent,
+    EquipeComponent,
+    AddEquipeComponent,
+    UpdateJoueurComponent
   ],
   imports: [
     BrowserModule,
