@@ -20,15 +20,23 @@ export class UpdateUsersComponent implements OnInit {
               private UserService: UserService) { }
 
   ngOnInit(): void {
-    this.role = this.UserService.listerole();
-    this.currentUser = this.UserService.consulterUser(this.activatedRoute.snapshot.params['id']);
-    this.updatedroleid=this.currentUser.roleUser.idrole;
+    this.UserService.listerole().
+    subscribe(r => {this.role = r;
+    console.log(r);
+    });
+    this.UserService.consulterUser(this.activatedRoute.snapshot.params['id']).
+    subscribe( u =>{ this.currentUser = u; 
+      this.updatedroleid =   this.currentUser.roleUser.idrole;
+    
+    } ) ;
+    
   }
 
   updateUser() {
-    this.currentUser.roleUser = this.UserService.consulterroles(this.updatedroleid!);
-    this.UserService.miseAjour(this.currentUser);
-    this.router.navigate(['users']);
+    this.currentUser.roleUser = this.role.find(cat => cat.idrole == this.updatedroleid)!;
+         this.UserService.miseAjour(this.currentUser).subscribe(u => {
+      this.router.navigate(['users']); }
+      );
   }
 
 }

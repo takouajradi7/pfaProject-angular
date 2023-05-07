@@ -18,13 +18,25 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.Users=this.UserService.listeUsers();
+    //this.Users=this.UserService.listeUsers();
+    this.chargerUsers();
+
   }
-  deleteUser(p:User)
+  chargerUsers(){
+    this.UserService.listeUsers().subscribe(u => {
+      console.log(u);
+      this.Users = u;
+      });
+  }
+
+  deleteUser(u:User)
     {
       let conf = confirm("Etes-vous sûr ?");
-      if (conf)
-        this.UserService.supprimerUser(p);
-    } 
+      if (conf){}
+      this.UserService.supprimerUser(u.idUser).subscribe(() => {
+        console.log("produit supprimé");
+        this.chargerUsers();    ;
+    } )
+  }
 
 }

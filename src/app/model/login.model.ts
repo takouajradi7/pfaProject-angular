@@ -1,5 +1,5 @@
 export class login{
     username!:string ;
-    password !: string ;
+    password!: string ;
     roles!:string[];
     }

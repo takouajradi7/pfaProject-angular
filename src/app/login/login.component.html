@@ -7,22 +7,23 @@
                         <div class="alert alert-danger" *ngIf="erreur==1">
                             <strong>login ou mot de passe erronés</strong>
                         </div>
-                        <h3 class="mb-5">Sign in</h3>
-
-
+                        <h3 class="mb-5">Se connecter</h3>
+                        
                         <div class="form-outline mb-4">
                             <label class="form-label" for="text">Nom Utilisateur</label>
-                            <input type="text" id="text" [(ngModel)]="login.username"
+                            <input type="text" name="username" id="text" [(ngModel)]="login.username"
                                 class="form-control form-control-lg" />
 
                         </div>
 
                         <div class="form-outline mb-4">
                             <label class="form-label" for="typePasswordX-2">Mot de passe</label>
-                            <input type="password" id="typePasswordX-2" class="form-control form-control-lg"
+                            <input type="password" name="password" id="typePasswordX-2" class="form-control form-control-lg"
                                 [(ngModel)]="login.password" />
 
-                        </div>
+                        </div> 
+
+
 
                         <!-- Checkbox -->
 

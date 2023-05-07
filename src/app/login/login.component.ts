@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { login } from '../model/login.model';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { User } from '../model/users.model';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +12,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  login = new login();
+  login= new login ();
 
-  erreur=0;
+  erreur: number=0;
 
   constructor(private authService : AuthService,
     private router: Router) { }
@@ -23,17 +24,21 @@ export class LoginComponent implements OnInit {
 
   onLoggedin()
   {
-    console.log(this.login);
-    // let pour declarer des variables locales dans la methode
-    let isValidUser: Boolean = this.authService.SignIn(this.login); // contient le resultat de la methode SignIn 'de la classe AuthService'
-    if (isValidUser)
-      this.router.navigate(['/']); 
-    else
-     // alert('Login ou mot de passe incorrecte!');
-     this.erreur =1;
-
+    {
+      this.authService.login(this.login).subscribe({
+        next: (data) => {
+          let jwToken = data.headers.get('Authorization')!;
+          this.authService.saveToken(jwToken);
+           this.router.navigate(['/']); 
+        },
+        error: (err: any) => {
+        this.erreur = 1; 
+        }
+        });
+}
+  }
 }
 
   
 
-}
+

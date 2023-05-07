@@ -1,52 +1,55 @@
 import { Injectable } from '@angular/core';
 import {User} from '../model/users.model';
 import { role } from '../model/role.model';
-
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+const httpOptions = {
+  headers: new HttpHeaders( {'Content-Type': 'application/json'} )
+  };
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  apiURL: string = 'http://localhost:8080/users/api';
   users : User[];
   role : role[];  
-  constructor() { 
+  constructor(private http : HttpClient) { 
     this.users = [ ];
-    this.role = [
-      {idrole : 1, nomrole : "admin"},
-      {idrole : 2, nomrole : "user"}
-    ];
+    this.role = [];
+      
   
 }
 
 
-  listeUsers():User[] {
-    return this.users;
+  listeUsers():Observable<User[]> {
+    return this.http.get<User[]>(this.apiURL);
     }
 
-  ajouterUser( u: User){
-    this.users.push(u);
+  ajouterUser( u: User ) : Observable<User[]> {
+    return this.http.post<User[]>(this.apiURL, u, httpOptions);
     }
-  supprimerUser( u: User){
-      const index = this.users.indexOf(u, 0);
-      if (index > -1) {
-      this.users.splice(index, 1);
-      }}
-      consulterUser (id:number): User{
-        return this.users.find(u => u.idUser == id)!;
-            
-    }
-    miseAjour(u : User)
-      {
-        this.supprimerUser(u);
-        this.ajouterUser(u);
+  supprimerUser(id: number){
+    const url = `${this.apiURL}/${id}`;
+    return this.http.delete(url, httpOptions);
+  }
       
-      }
-    listerole():role[] {
-        return this.role;
+ consulterUser(id: number): Observable<User>{
+          const url = `${this.apiURL}/${id}`;
+          return this.http.get<User>(url);
+ }
+  miseAjour(u : User ) :Observable<User>
+   {
+    return this.http.put<User>(this.apiURL, u, httpOptions);
+      
     }
+    listerole():Observable<role[]> {
+      return this.http.get<role[]>(this.apiURL+"/cat");
+    }
+    
 
-    consulterroles(id:number): role{
-        return this.role.find(role => role.idrole == id)!;
-    }
+    //(id:number): role{
+        //return this.role.find(role => role.idrole == id)!;
+    //}
   
   }
     

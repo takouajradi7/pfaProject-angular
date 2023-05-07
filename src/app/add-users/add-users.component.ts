@@ -12,23 +12,28 @@ import { Router } from '@angular/router';
 })
 export class AddUsersComponent implements OnInit {
   newUser= new User();
-  role? : role[];
+  role!: role[];
   newidrole! : number;
   newrole! : role;
+  
 
   constructor(private UserService: UserService, private router : Router) { }
 
   ngOnInit(): void {
-    this.role = this.UserService.listerole();
+    this.UserService.listerole().
+          subscribe(r => {this.role = r;
+            console.log(r);
+        });
 
   }
   addUser() {
-    this.newrole = this.UserService.consulterroles(this.newidrole);
-    this.newUser.roleUser = this.newrole;
-    this.UserService.ajouterUser(this.newUser);
-    this.router.navigate(['users']);
+    this.newUser.roleUser = this.role.find(r => r.idrole == this.newidrole)!;
+    this.UserService.ajouterUser(this.newUser)
+                      .subscribe(u => {
+                      console.log(u);
+                      this.router.navigate(['users']);
+                      }); 
+  
 
-  }
 
-
-}
+}}
