@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>nom</th>
+                        <th>prenom</th>
+                        <th>Date de naissance</th>
+                        <th>lieu de naissance</th>
+                        <th>numero de telephone</th>
+                        <th>sexe</th>
+                        <th>Handicape</th>     
+                    </tr>
+                </thead>
+                <tbody *ngFor="let joueur of Joueurs">
+                    <tr>
+                        <td>{{joueur.nom}}</td>
+                        <td>{{joueur.prenom}}</td>
+                        <td>{{joueur.date_nais | date:'dd/MM/yyyy'}}</td>
+                        <td>{{joueur.lieu_nais}}</td>
+                        <td>{{joueur.numero_tele}}</td>
+                        <td>{{joueur.sexe}}</td>
+                        <td>{{joueur.Handicape}}</td>
+                        <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="deleteJoueur(joueur)">Supprimer</a></td>
+                        <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updateJoueur',joueur.idjoueur ]">Modifier</a></td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
