@@ -72,9 +72,9 @@ SignIn(login :login):Boolean{
   
 
 isAdmin():Boolean{
-  if (!this.roles) //this.roles== undefiened on n'a pas de role
-      return false;
-  return (this.roles.indexOf('admin') >-1);  // si la chaine admin appartient au tableau role 
+  //if (!this.roles) //this.roles== undefiened on n'a pas de role
+      return true;
+  //return (this.roles.indexOf('admin') >-1);  // si la chaine admin appartient au tableau role 
 }
 
 logout() {

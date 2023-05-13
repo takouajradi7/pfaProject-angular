@@ -4,7 +4,7 @@
             <div class="col-12 col-lg-9 col-xl-7">
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                     <div class="card-body p-4 p-md-5">
-                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Ajouter un joueur</h3>
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Modifier un joueur</h3>
                         <form>
 
                             <div class="row">
@@ -12,7 +12,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" for="nom">Nom</label>
-                                        <input type="text" [(ngModel)]="newJoueur.nom" name="nom" class="form-control form-control-lg" />
+                                        <input type="text" [(ngModel)]="currentJoueur.nom" name="nom" class="form-control form-control-lg" />
 
                                     </div>
 
@@ -21,7 +21,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" for="prenom">Prenom</label>
-                                        <input type="text" [(ngModel)]="newJoueur.prenom" name="prenom"  class="form-control form-control-lg" />
+                                        <input type="text" [(ngModel)]="currentJoueur.prenom" name="prenom"  class="form-control form-control-lg" />
 
                                     </div>
 
@@ -36,7 +36,7 @@
 
                                     <div class="form-outline datepicker w-100">
                                         <label for="date_nais" class="form-label">Date de naissance</label>
-                                        <input type="date" [(ngModel)]="newJoueur.date_nais" name="date_nais" class="form-control form-control-lg" />
+                                        <input type="date" [(ngModel)]="currentJoueur.date_nais" name="date_nais" class="form-control form-control-lg" />
 
                                     </div>
 
@@ -44,7 +44,7 @@
 
                                 <div class="form-outline">
                                     <label class="form-label" for="lieu_nais">Lieu de naissance </label>
-                                    <input type="text" [(ngModel)]="newJoueur.lieu_nais" name="lieu_nais"  class="form-control form-control-lg" />
+                                    <input type="text" [(ngModel)]="currentJoueur.lieu_nais" name="lieu_nais"  class="form-control form-control-lg" />
 
                                 </div>
 
@@ -57,7 +57,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" for="numero_tele">Numero telephone</label>
-                                        <input type="tel" [(ngModel)]="newJoueur.numero_tele" name="numero_tele"   class="form-control form-control-lg" />
+                                        <input type="tel" [(ngModel)]="currentJoueur.numero_tele" name="numero_tele"   class="form-control form-control-lg" />
                                     </div>
 
 
@@ -68,13 +68,13 @@
                                     <h6 class="mb-2 pb-1">Sexe: </h6>
 
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" [(ngModel)]="newJoueur.sexe"  name="inlineRadioOptions"
+                                        <input class="form-check-input" type="radio" [(ngModel)]="currentJoueur.sexe"  name="inlineRadioOptions"
                                             id="femaleGender" value="Femme" checked />
                                         <label class="form-check-label" for="femaleGender">Femme</label>
                                     </div>
 
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" [(ngModel)]="newJoueur.sexe" name="inlineRadioOptions"
+                                        <input class="form-check-input" type="radio" [(ngModel)]="currentJoueur.sexe" name="inlineRadioOptions"
                                             id="maleGender" value="Homme" />
                                         <label class="form-check-label" for="maleGender">Homme</label>
                                     </div>
@@ -91,22 +91,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="form3Example3cg">Nom de l'équipe</label>
-                                        <select class="form-control form-control-lg"   name="Typehand">
-
-                                        </select>
-                                    </div>
-                                </div>
+                            <div class="mt-2">
+                                <button type="submit" (click)="updateJoueur()" class="btn btn-success">Modifer</button>
                             </div>
-                           
-                            <div class="mt-4 pt-2">
-                                <label class="form-label">
-                                    <button type="submit" (click)="addJoueur()"
-                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Ajouter</button></label>
-                            </div>
+                              
 
                         </form>
                     </div>

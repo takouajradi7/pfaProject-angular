@@ -1,1 +1,31 @@
-<p>equipe works!</p>
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nom de l'equipe</th>
+                        <th>Date de fondation</th>
+                        <th>passeport</th>
+                        <th>Adresse email</th>
+                        <th>numero de telephone</th>
+                        <th>Fax</th>
+                        <th>adresse</th>     
+                    </tr>
+                </thead>
+                <tbody *ngFor="let equipe of equipes">
+                    <tr>
+                        <td>{{equipe.nomequi}}</td>
+                        <td>{{equipe.datefond}}</td>
+                        <td>{{equipe.passeport}}</td>
+                        <td>{{equipe.emailAddress}}</td>
+                        <td>{{equipe.telephone}}</td>
+                        <td>{{equipe.fax}}</td>
+                        <td>{{equipe.adresse}}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -19,10 +19,10 @@ export class AppComponent implements OnInit{
     let isloggedin = localStorage.getItem('isloggedIn');
     let loggedUser = localStorage.getItem('loggedUser');
 
-    if (isloggedin != "true" || !loggedUser)
-      this.router.navigate(['/login']);
+   //if (isloggedin != "true" || !loggedUser)
+      /*this.router.navigate(['/login']);
     else
-      this.authService.setLoggedUserFromLocalStorage(loggedUser);
+      this.authService.setLoggedUserFromLocalStorage(loggedUser);*/
   }
 
   onLogout(){

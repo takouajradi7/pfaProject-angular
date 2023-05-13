@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nom de la Comité</th>
+                        <th>adresse</th>
+                        <th>Adresse email</th>
+                        <th>numero de telephone</th>
+                        <th>Fax</th>     
+                    </tr>
+                </thead>
+                <tbody *ngFor="let comite of comites">
+                    <tr>
+                        <td>{{comite.nomecom}}</td>
+                        <td>{{comite.adressecom}}</td>
+                        <td>{{comite.emailAddresscom}}</td>
+                        <td>{{comite.telephonecom}}</td>
+                        <td>{{comite.faxcom}}</td> 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

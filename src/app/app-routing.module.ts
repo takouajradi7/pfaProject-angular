@@ -10,19 +10,25 @@ import { JoueurComponent } from './joueur/joueur.component';
 import { AddJoueurComponent } from './add-joueur/add-joueur.component';
 import { EquipeComponent } from './equipe/equipe.component';
 import { AddEquipeComponent } from './add-equipe/add-equipe.component';
+import { AddcomiteComponent } from './add-comite/add-comite.component';
+
 import { UpdateJoueurComponent } from './update-joueur/update-joueur.component';
+import { ComiteComponent } from './comite/comite.component';
 
 
 
 const routes: Routes = [
   {path: "users", component : UsersComponent},
+  {path: "comite", component : ComiteComponent},
   {path: "add-users", component : AddUsersComponent, canActivate:[UserGuard]},
-  {path: "", redirectTo: "users", pathMatch: "full" },
+  {path: "", redirectTo: "add-joueur", pathMatch: "full" },
   {path: "updateUser/:id", component: UpdateUsersComponent},
   {path: 'app-forbidden', component: ForbiddenComponent},
-  {path: 'login', component: LoginComponent},
+  //{path: 'login', component: LoginComponent},
   {path: 'joueur', component: JoueurComponent},
   {path: 'add-joueur', component: AddJoueurComponent},
+  {path: 'add-comite', component: AddcomiteComponent},
+
   {path: 'equipe', component: EquipeComponent},
   {path: 'add-equipe', component: AddEquipeComponent},
   {path: "updateJoueur/:idJoueur", component: UpdateJoueurComponent},
