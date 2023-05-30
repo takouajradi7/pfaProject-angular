@@ -3,6 +3,7 @@ import { joueur } from '../model/joueur.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JoueurService } from '../services/joueur.service';
 
+
 @Component({
   selector: 'app-update-joueur',
   templateUrl: './update-joueur.component.html',

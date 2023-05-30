@@ -24,7 +24,7 @@ export class UpdateEquipeComponent implements OnInit {
     //this.updatedroleid=this.currentJoueur.roleUser.idrole;
   }
 
-  updateJoueur() {
+  updateEquipe() {
     //this.currentUser.roleUser = this.UserService.consulterroles(this.updatedroleid!);
     this.EquipeService.miseAjourEq(this. currentEquipe = new equipe());
     this.router.navigate(['equipe']);

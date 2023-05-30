@@ -25,11 +25,14 @@ export class JoueurService {
       const index = this.joueurs.indexOf(j, 0);
       if (index > -1) {
       this.joueurs.splice(index, 1);
-      }}
-      consulterJoueur (id:number): joueur{
-        return this.joueurs.find(j => j.idjoueur == id)!;
+    }}
+
+
+    consulterJoueur (id:number): joueur{
+      return this.joueurs.find(j => j.idjoueur == id)!;
             
     }
+    
     miseAjour(j : joueur)
       {
         this.supprimerJoueur(j);

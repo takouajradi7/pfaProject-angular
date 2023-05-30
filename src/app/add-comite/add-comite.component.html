@@ -1,60 +1,92 @@
 <section class="vh-100 gradient-custom">
     <div class="container py-5 h-100">
         <div class="row justify-content-center align-items-center h-100">
-            <div class="col-12 col-lg-8 col-xl-10">
+            <div class="col-12 col-lg-9 col-xl-7">
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                     <div class="card-body p-4 p-md-5">
-                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Ajouter un Comité</h3>
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Ajouter une comité</h3>
                         <form>
 
                             <div class="row">
                                 <div class="col-md-6 mb-4">
 
                                     <div class="form-outline">
-                                        <label class="form-label" for="nomequi">Nom de la Comité</label>
-                                        <input type="text" id="nomecom" class="form-control form-control-lg" />
+                                        <label class="form-label" for="nomecom">Nom de la comité</label>
+                                        <input type="text" [(ngModel)]="newcomite.nomecom" name="nomecom"
+                                            class="form-control form-control-lg" />
 
                                     </div>
+
                                 </div>
-                                <div class="col-md-6 mb-4 pb-2">
+                                <div class="col-md-6 mb-4">
 
                                     <div class="form-outline">
-                                        <label class="form-label" for="emailAddress">Email</label>
-                                        <input type="email" id="emailAddresscom" class="form-control form-control-lg" />
+                                        <label class="form-label" for="emailAddresscom">Mail</label>
+                                        <input type="mail" [(ngModel)]="newcomite.emailAddresscom"
+                                            name="emailAddresscom" class="form-control form-control-lg" />
+
                                     </div>
 
                                 </div>
                             </div>
-
 
                             <div class="row">
-                                <div class="col-md-6 mb-4 pb-2">
-                                    <div class="form-outline">
-                                        <label class="form-label" for="Adresse">Adresse</label>
-                                        <input type="tel" id="adressecom" class="form-control form-control-lg" />
+
+
+
+                                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                                    <div class="form-outline datepicker w-100">
+                                        <label for="adressecom" class="form-label">Adresse</label>
+                                        <input type="text" [(ngModel)]="newcomite.adressecom" name="adressecom"
+                                            class="form-control form-control-lg" />
+
                                     </div>
+
                                 </div>
-                                <div class="col-md-6 mb-4 pb-2">
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-4">
 
                                     <div class="form-outline">
-                                        <label class="form-label" for="Fax">Fax</label>
-                                        <input type="tel" id="faxcom" class="form-control form-control-lg" />
+                                        <label class="form-label" for="telephonecom">Numero telephone</label>
+                                        <input type="tel" [(ngModel)]="newcomite.telephonecom" name="telephonecom"
+                                            class="form-control form-control-lg" />
                                     </div>
+
+
                                 </div>
 
-                                <div class="col-md-6 mb-4  pb-2">
+                                <div class="col-md-6 mb-4">
+
                                     <div class="form-outline">
-                                        <label class="form-label" for="telephone">Téléphone</label>
-                                        <input type="tel" id="telephonecom" class="form-control form-control-lg" />
+                                        <label class="form-label" for="faxcom">Fax</label>
+                                        <input type="tel" [(ngModel)]="newcomite.faxcom" name="faxcom"
+                                            class="form-control form-control-lg" />
+                                    </div>
+
+
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form3Example3cg">Type Handicape</label>
+                                        <select class="form-control form-control-lg" name="Typehand">
+
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-    
-                            <div class="mt-4 pt-2">
-                                <label class="form-label"><button class="btn btn-success btn-lg btn-block"
-                                        type="submit" (click)="addcomite()">Ajouter</button></label>
+                            <div class="mt-2">
+                                <button type="submit" (click)="addcomite()" class="btn btn-success">Ajouter</button>
                             </div>
-
                         </form>
                     </div>
                 </div>

@@ -14,6 +14,10 @@ import { EquipeComponent } from './equipe/equipe.component';
 import { AddEquipeComponent } from './add-equipe/add-equipe.component';
 import { UpdateJoueurComponent } from './update-joueur/update-joueur.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UpdateEquipeComponent } from './update-equipe/update-equipe.component';
+import { UpdatecomiteComponent } from './update-comite/update-comite.component';
+import { AddcomiteComponent } from './add-comite/add-comite.component';
+import { ComiteComponent } from './comite/comite.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +27,16 @@ import { HttpClientModule } from '@angular/common/http';
     UpdateUsersComponent,
     LoginComponent,
     ForbiddenComponent,
-    AddJoueurComponent,
     JoueurComponent,
+    AddJoueurComponent,
+    UpdateJoueurComponent,
     EquipeComponent,
     AddEquipeComponent,
-    UpdateJoueurComponent
+    UpdateEquipeComponent,
+    ComiteComponent,
+    AddcomiteComponent,
+    UpdatecomiteComponent,
+    
   ],
   imports: [
     BrowserModule,

@@ -11,11 +11,11 @@
                 </thead>
                 <tbody *ngFor="let User of Users">
                     <tr>
-                        <td>{{User.idUser}}</td>
-                        <td>{{User.nomUser}}</td>
-                        <td>{{User.roleUser.nomrole}}</td>
+                        <td>{{User.id}}</td>
+                        <td>{{User.nom}}</td>
+                        <td>{{User.role.nomrole}}</td>
                         <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="deleteUser(User)">Supprimer</a></td>
-                        <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updateUser',User.idUser ]">Modifier</a></td>
+                        <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updateUser',User.id]">Modifier</a></td>
                     
                     </tr>
                 </tbody>

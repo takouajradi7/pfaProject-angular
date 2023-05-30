@@ -33,7 +33,7 @@ export class UsersComponent implements OnInit {
     {
       let conf = confirm("Etes-vous sûr ?");
       if (conf){}
-      this.UserService.supprimerUser(u.idUser).subscribe(() => {
+      this.UserService.supprimerUser(u.id).subscribe(() => {
         console.log("produit supprimé");
         this.chargerUsers();    ;
     } )

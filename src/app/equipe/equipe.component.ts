@@ -21,7 +21,7 @@ export class EquipeComponent implements OnInit {
  
   
    
-  deleteJoueur(eq:equipe)
+  deleteEquipe(eq:equipe)
       {
         let conf = confirm("Etes-vous sûr ?");
         if (conf)

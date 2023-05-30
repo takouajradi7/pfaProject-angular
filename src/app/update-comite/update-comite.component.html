@@ -4,15 +4,16 @@
             <div class="col-12 col-lg-9 col-xl-7">
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                     <div class="card-body p-4 p-md-5">
-                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Modifier un comite</h3>
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Modifier une comite</h3>
                         <form>
 
                             <div class="row">
                                 <div class="col-md-6 mb-4">
 
                                     <div class="form-outline">
-                                        <label class="form-label" for="nom">Nom</label>
-                                        <input type="text" [(ngModel)]="currentcomite.nom" name="nom" class="form-control form-control-lg" />
+                                        <label class="form-label" for="nomecom">Nom</label>
+                                        <input type="text" [(ngModel)]="currentcomite.nomecom" name="nomecom"
+                                            class="form-control form-control-lg" />
 
                                     </div>
 
@@ -20,8 +21,9 @@
                                 <div class="col-md-6 mb-4">
 
                                     <div class="form-outline">
-                                        <label class="form-label" for="prenom">Prenom</label>
-                                        <input type="text" [(ngModel)]="currentcomite.prenom" name="prenom"  class="form-control form-control-lg" />
+                                        <label class="form-label" for="emailAddresscom">Mail</label>
+                                        <input type="mail" [(ngModel)]="currentcomite.emailAddresscom"
+                                            name="emailAddresscom" class="form-control form-control-lg" />
 
                                     </div>
 
@@ -30,34 +32,28 @@
 
                             <div class="row">
 
-                            
-                                    
+
+
                                 <div class="col-md-6 mb-4 d-flex align-items-center">
 
                                     <div class="form-outline datepicker w-100">
-                                        <label for="date_nais" class="form-label">Date de naissance</label>
-                                        <input type="date" [(ngModel)]="currentcomite.date_nais" name="date_nais" class="form-control form-control-lg" />
+                                        <label for="adressecom" class="form-label">Adresse</label>
+                                        <input type="text" [(ngModel)]="currentcomite.adressecom" name="adressecom"
+                                            class="form-control form-control-lg" />
 
                                     </div>
 
                                 </div>
-
-                                <div class="form-outline">
-                                    <label class="form-label" for="lieu_nais">Lieu de naissance </label>
-                                    <input type="text" [(ngModel)]="currentcomite.lieu_nais" name="lieu_nais"  class="form-control form-control-lg" />
-
-                                </div>
-
-
                             </div>
 
                             <div class="row">
 
-                                <div class="col-md-6 mb-4 pb-2">
+                                <div class="col-md-6 mb-4">
 
                                     <div class="form-outline">
-                                        <label class="form-label" for="numero_tele">Numero telephone</label>
-                                        <input type="tel" [(ngModel)]="currentcomite.numero_tele" name="numero_tele"   class="form-control form-control-lg" />
+                                        <label class="form-label" for="telephonecom">Numero telephone</label>
+                                        <input type="tel" [(ngModel)]="currentcomite.telephonecom" name="telephonecom"
+                                            class="form-control form-control-lg" />
                                     </div>
 
 
@@ -65,27 +61,24 @@
 
                                 <div class="col-md-6 mb-4">
 
-                                    <h6 class="mb-2 pb-1">Sexe: </h6>
-
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" [(ngModel)]="currentcomite.sexe"  name="inlineRadioOptions"
-                                            id="femaleGender" value="Femme" checked />
-                                        <label class="form-check-label" for="femaleGender">Femme</label>
+                                    <div class="form-outline">
+                                        <label class="form-label" for="faxcom">Fax</label>
+                                        <input type="tel" [(ngModel)]="currentcomite.faxcom" name="faxcom"
+                                            class="form-control form-control-lg" />
                                     </div>
 
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" [(ngModel)]="currentcomite.sexe" name="inlineRadioOptions"
-                                            id="maleGender" value="Homme" />
-                                        <label class="form-check-label" for="maleGender">Homme</label>
-                                    </div>
+
                                 </div>
+
+
+
                             </div>
 
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="form3Example3cg">Type Handicape</label>
-                                        <select class="form-control form-control-lg"   name="Typehand">
+                                        <select class="form-control form-control-lg" name="Typehand">
 
                                         </select>
                                     </div>
@@ -94,8 +87,6 @@
                             <div class="mt-2">
                                 <button type="submit" (click)="updatecomite()" class="btn btn-success">Modifer</button>
                             </div>
-                              
-
                         </form>
                     </div>
                 </div>

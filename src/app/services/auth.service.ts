@@ -14,7 +14,7 @@ export class AuthService {
   /*log_user: login[] = [{"username":"admin","password":"123","roles":['admin']},
                     {"username":"pfa","password":"123","roles":['user']} ];*/
  private helper = new JwtHelperService();
- apiURL: string = 'http://localhost:8081/users';
+ apiURL: string = 'http://localhost:8081/comptes';
  token!:string;
 
                   

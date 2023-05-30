@@ -22,7 +22,9 @@
                         <td>{{equipe.telephone}}</td>
                         <td>{{equipe.fax}}</td>
                         <td>{{equipe.adresse}}</td>
-                        
+                        <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="deleteEquipe(equipe)">Supprimer</a></td>
+                        <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updateEquipe',equipe.ideq ]">Modifier</a></td>
+                       
                     </tr>
                 </tbody>
             </table>

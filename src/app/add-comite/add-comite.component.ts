@@ -15,12 +15,12 @@ export class AddcomiteComponent implements OnInit {
   ngOnInit(): void {
   }
   
-    addcomite(){
-      console.log(this.newcomite);
-      this.comiteService.ajouterComite(this.newcomite);
-      this.router.navigate(['comite']);
-    }
+  addcomite(){
+    console.log(this.newcomite);
+    this.comiteService.ajouterComite(this.newcomite);
+    this.router.navigate(['comite']);
   }
+}
   
 
 

@@ -20,20 +20,25 @@ export class AddUsersComponent implements OnInit {
   constructor(private UserService: UserService, private router : Router) { }
 
   ngOnInit(): void {
-    this.UserService.listerole().
+    /*this.UserService.listerole().
           subscribe(r => {this.role = r;
             console.log(r);
-        });
+        });*/
+      this.role = this.UserService.listerole();
 
   }
+
   addUser() {
-    this.newUser.roleUser = this.role.find(r => r.idrole == this.newidrole)!;
+    /*this.newUser.role = this.role.find(r => r.idrole == this.newidrole)!;
     this.UserService.ajouterUser(this.newUser)
                       .subscribe(u => {
                       console.log(u);
                       this.router.navigate(['users']);
-                      }); 
-  
+                      }); */
 
-
+                      console.log(this.role);
+                      this.newrole = this.UserService.consulterRole(this.newidrole);
+                      this.newUser.role = this.newrole;
+                      this.UserService.ajouterUser(this.newUser);
+                      this.router.navigate(['users']);
 }}

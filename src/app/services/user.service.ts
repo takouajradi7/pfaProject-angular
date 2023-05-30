@@ -10,15 +10,15 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserService {
-  apiURL: string = 'http://localhost:8080/users/api';
+  apiURL: string = 'http://localhost:8080/comptes/api';
   users : User[];
   role : role[];  
   constructor(private http : HttpClient) { 
     this.users = [ ];
-    this.role = [];
-      
-  
-}
+    this.role = [{idrole:1,nomrole:"role_admin"},
+                {idrole:2,nomrole:"role_association"},
+                {idrole:3,nomrole:"role_ligue"}];
+  }
 
 
   listeUsers():Observable<User[]> {
@@ -42,14 +42,18 @@ export class UserService {
     return this.http.put<User>(this.apiURL, u, httpOptions);
       
     }
+    /*
     listerole():Observable<role[]> {
       return this.http.get<role[]>(this.apiURL+"/cat");
-    }
+    }*/
     
 
-    //(id:number): role{
-        //return this.role.find(role => role.idrole == id)!;
-    //}
+    consulterRole(id:number): role{
+        return this.role.find(role => role.idrole == id)!;
+    }
+    listerole():role[] {
+      return this.role;
+    }
   
   }
     

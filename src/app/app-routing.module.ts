@@ -14,24 +14,30 @@ import { AddcomiteComponent } from './add-comite/add-comite.component';
 
 import { UpdateJoueurComponent } from './update-joueur/update-joueur.component';
 import { ComiteComponent } from './comite/comite.component';
+import { UpdateEquipeComponent } from './update-equipe/update-equipe.component';
+import { UpdatecomiteComponent } from './update-comite/update-comite.component';
 
 
 
 const routes: Routes = [
   {path: "users", component : UsersComponent},
-  {path: "comite", component : ComiteComponent},
   {path: "add-users", component : AddUsersComponent, canActivate:[UserGuard]},
-  {path: "", redirectTo: "add-joueur", pathMatch: "full" },
   {path: "updateUser/:id", component: UpdateUsersComponent},
   {path: 'app-forbidden', component: ForbiddenComponent},
-  //{path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'joueur', component: JoueurComponent},
   {path: 'add-joueur', component: AddJoueurComponent},
-  {path: 'add-comite', component: AddcomiteComponent},
-
+  {path: "updateJoueur/:id", component: UpdateJoueurComponent},
   {path: 'equipe', component: EquipeComponent},
   {path: 'add-equipe', component: AddEquipeComponent},
-  {path: "updateJoueur/:idJoueur", component: UpdateJoueurComponent},
+  {path: "updateEquipe/:id", component: UpdateEquipeComponent},
+  {path: "comite", component : ComiteComponent},
+  {path: 'add-comite', component: AddcomiteComponent},
+  {path: "updatecomite/:id", component: UpdatecomiteComponent},
+  {path: "", redirectTo: "users", pathMatch: "full" }
+
+  
+  
 ];
 
 @NgModule({

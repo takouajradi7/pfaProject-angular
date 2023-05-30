@@ -1,10 +1,10 @@
 <section class="vh-100 gradient-custom">
-    <div class="container py-5 h-100">
+    <div class="container py-4 h-100">
         <div class="row justify-content-center align-items-center h-100">
-            <div class="col-12 col-lg-8 col-xl-10">
+            <div class="col-12 col-lg-8 col-xl-9">
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-                    <div class="card-body p-4 p-md-5">
-                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Ajouter une équipe</h3>
+                    <div class="card-body p-4 p-md-6">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-8">Ajouter une équipe</h3>
                         <form>
 
                             <div class="row">
@@ -12,7 +12,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" for="nomequi">Nom de l'equipe</label>
-                                        <input type="text" id="nomequi" class="form-control form-control-lg" />
+                                        <input type="text" id="nomequi" [(ngModel)]="newEquipe.nomequi" name="nomequi" class="form-control form-control-lg" />
 
                                     </div>
                                 </div>
@@ -20,14 +20,14 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline datepicker w-100">
                                         <label for="datefond" class="form-label">Date fondation</label>
-                                        <input type="text" class="form-control form-control-lg" id="datefond" />
+                                        <input type="text" [(ngModel)]="newEquipe.datefond" name="datefond" class="form-control form-control-lg" id="datefond" />
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
                                         <label class="form-label" for="Passport">Passeport</label>
-                                        <input type="text" id="Passport" class="form-control form-control-lg" />
+                                        <input type="text" id="Passport" [(ngModel)]="newEquipe.passeport" name="passeport" class="form-control form-control-lg" />
                                     </div>
                                 </div>
 
@@ -35,7 +35,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" for="emailAddress">Email</label>
-                                        <input type="email" id="emailAddress" class="form-control form-control-lg" />
+                                        <input type="email" id="emailAddress" [(ngModel)]="newEquipe.emailAddress"  name="emailAddress" class="form-control form-control-lg" />
                                     </div>
 
                                 </div>
@@ -46,21 +46,21 @@
                                 <div class="col-md-6 mb-4 pb-2">
                                     <div class="form-outline">
                                         <label class="form-label" for="Adresse">Adresse</label>
-                                        <input type="tel" id="Adresse" class="form-control form-control-lg" />
+                                        <input type="text" id="adresse" [(ngModel)]="newEquipe.adresse" name="adresse" class="form-control form-control-lg" />
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-4 pb-2">
 
                                     <div class="form-outline">
                                         <label class="form-label" for="Fax">Fax</label>
-                                        <input type="tel" id="Fax" class="form-control form-control-lg" />
+                                        <input type="tel" id="fax" [(ngModel)]="newEquipe.fax" class="form-control form-control-lg" />
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 mb-4  pb-2">
                                     <div class="form-outline">
                                         <label class="form-label" for="telephone">Téléphone</label>
-                                        <input type="tel" id="tel" class="form-control form-control-lg" />
+                                        <input type="tel" id="telephone" [(ngModel)]="newEquipe.telephone" name="telephone" class="form-control form-control-lg" />
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                                 <div class="col-12">
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="form3Example3cg">Comité</label>
-                                        <select class="form-control form-control-lg"   name="Typehand">
+                                        <select class="form-control form-control-lg"    name="Typehand">
 
                                         </select>
                                     </div>
