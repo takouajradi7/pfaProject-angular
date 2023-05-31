@@ -18,12 +18,15 @@
       <!-- Dropdown -->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-          users
+          Admin Federation
         </a>
         <div class="dropdown-menu">
           <!-- lien afficher seulement si le user a le role admin c-a-d si la methode isAdmin renvoie true-->
-          <a  *ngIf="authService.isAdmin()" class="dropdown-item" routerLink="add-users">Ajouter</a>
-          <a class="dropdown-item" href="#">Lister</a>
+          <a class="dropdown-item" routerLink="">Gestion des équipes</a>
+          <a class="dropdown-item" routerLink="">Gestion des comités</a>
+          <a class="dropdown-item" routerLink="">Gestion des joueurs</a>
+          <!--a  *ngIf="authService.isAdmin()" class="dropdown-item" routerLink="add-users">Ajouter</a>
+          <a class="dropdown-item" href="#">Lister</a-->
         </div>
       </li>
     </ul>
