@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { equipe } from '../model/equipe.model';
 import { EquipeService } from '../services/equipe.service';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,12 +14,17 @@ export class EquipeComponent implements OnInit {
   equipes? : equipe[];    //un tableau de produits
 
   constructor(private equipeService: EquipeService,
-    public authService: AuthService) { }
+    public authService: AuthService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.equipes=this.equipeService.listeEquipes();
   }
  
+  
+  redirectToForm() {
+    this.router.navigate(['add-equipe']);
+  }
   
    
   deleteEquipe(eq:equipe)
@@ -29,6 +35,16 @@ export class EquipeComponent implements OnInit {
       } 
   
   }
+
+
+
+  
+  
+
+
+
+
+
   
 
 

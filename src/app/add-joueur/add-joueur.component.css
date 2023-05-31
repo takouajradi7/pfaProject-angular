@@ -1,7 +1,8 @@
 .vh-100 {
     background-image: url('https://ua.edu.lb/ContentFiles/31451Image.jpg');
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size:cover;
-
+    background-position: center ;
 
 }
+

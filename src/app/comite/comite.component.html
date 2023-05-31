@@ -1,29 +1,38 @@
-<div class="container">
-    <div class="card shadow mb-4">
-        <div class="card-body">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Nom de la Comité</th>
-                        <th>adresse</th>
-                        <th>Adresse email</th>
-                        <th>numero de telephone</th>
-                        <th>Fax</th>     
-                    </tr>
-                </thead>
-                <tbody *ngFor="let comite of comites">
-                    <tr>
-                        <td>{{comite.nomecom}}</td>
-                        <td>{{comite.adressecom}}</td>
-                        <td>{{comite.emailAddresscom}}</td>
-                        <td>{{comite.telephonecom}}</td>
-                        <td>{{comite.faxcom}}</td> 
-                        <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="deleteComite(comite)">Supprimer</a></td>
-                        <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updatecomite',comite.idcom ]">Modifier</a></td>
-                    
-                    </tr>
-                </tbody>
-            </table>
+<section class="vh-100 gradient-custom">
+    <div class="container">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-end mb-3">
+                    <button class="btn btn-success green-button" (click)="redirectToForm()">
+                        <span>&#x2B;</span> Ajouter une comité
+                    </button>
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nom de la Comité</th>
+                            <th>adresse</th>
+                            <th>Adresse email</th>
+                            <th>numero de telephone</th>
+                            <th>Fax</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let comite of comites">
+                        <tr>
+                            <td>{{comite.nomecom}}</td>
+                            <td>{{comite.adressecom}}</td>
+                            <td>{{comite.emailAddresscom}}</td>
+                            <td>{{comite.telephonecom}}</td>
+                            <td>{{comite.faxcom}}</td>
+                            <td><a *ngIf="authService.isAdmin()" class="btn btn-danger"
+                                    (click)="deleteComite(comite)">Supprimer</a></td>
+                            <td><a *ngIf="authService.isAdmin()" class="btn btn-success"
+                                    [routerLink]="['/updatecomite',comite.idcom ]">Modifier</a></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
+</section>

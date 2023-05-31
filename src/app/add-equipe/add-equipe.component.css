@@ -5,3 +5,24 @@
     position:relative;
 
 }
+
+.container {
+    max-width: 1200px;
+    max-height: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  form {
+    display: grid;
+    gap: 10px;
+  }
+
+  input[type="text"],
+ input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }

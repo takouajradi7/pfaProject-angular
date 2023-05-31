@@ -1,6 +1,13 @@
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-body">
+            
+            <div class="d-flex justify-content-end mb-3">
+                <button class="btn btn-success green-button" (click)="redirectToForm()">
+                    <span>&#x2B;</span> Ajouter une équipe
+                </button>
+            </div>
+
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -10,7 +17,7 @@
                         <th>Adresse email</th>
                         <th>numero de telephone</th>
                         <th>Fax</th>
-                        <th>adresse</th>     
+                        <th>adresse</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let equipe of equipes">
@@ -22,9 +29,11 @@
                         <td>{{equipe.telephone}}</td>
                         <td>{{equipe.fax}}</td>
                         <td>{{equipe.adresse}}</td>
-                        <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="deleteEquipe(equipe)">Supprimer</a></td>
-                        <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updateEquipe',equipe.ideq ]">Modifier</a></td>
-                       
+                        <td><a *ngIf="authService.isAdmin()" class="btn btn-danger"
+                                (click)="deleteEquipe(equipe)">Supprimer</a></td>
+                        <td><a *ngIf="authService.isAdmin()" class="btn btn-success"
+                                [routerLink]="['/updateEquipe',equipe.ideq ]">Modifier</a></td>
+
                     </tr>
                 </tbody>
             </table>
